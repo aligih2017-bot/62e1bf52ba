@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenverarbeitung &ndash; Informatik 8</title>
+<title>Leistungsnachweis 2 &ndash; Informatik 8</title>
 <style>
   :root {
     --ink: #13171a;
@@ -74,7 +74,7 @@
 
   table.ablauf, table.plan { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 0.86rem; }
   table.ablauf th, table.plan th {
-    text-align: left; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
+    text-align: left; white-space: nowrap; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--muted); font-weight: 700; padding: 0 10px 8px 0;
     border-bottom: 1px solid var(--ink);
   }
@@ -163,7 +163,8 @@
   @media print {
     body { background: white; padding: 0; }
     .no-print { display: none !important; }
-    .blatt { max-width: 100%; }
+    .blatt { max-width: 100%; break-after: page; }
+    .blatt:last-child { break-after: auto; }
     .kopf { background: white !important; color: var(--ink) !important; border-bottom: 2px solid var(--ink); padding: 0 6px 16px; }
     .kopf h1 { color: var(--ink) !important; }
     .eyebrow { color: var(--akzent) !important; }
@@ -172,6 +173,41 @@
     .inhalt { padding: 16px 6px; }
     table.ablauf, table.plan { font-size: 0.78rem; }
   }
+</style>
+<style>
+  .tafelbild {
+    border: 1.5px solid var(--ink); border-radius: 4px; padding: 18px 22px; margin: 4px 0 6px;
+    background: #1c2024; color: #eef1ee; font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  .legende { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); margin-top: 8px; }
+</style>
+<style>
+  .lnw-kopfzeile { display:flex; gap:28px; font-size:0.9rem; margin-bottom:22px; flex-wrap:wrap; }
+  .lnw-kopfzeile span { border-bottom:1px solid var(--linie); padding-bottom:3px; min-width:140px; }
+  .aufgabe { margin-bottom:22px; }
+  .aufgabe-kopf { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+  .aufgabe-kopf b { font-size:0.98rem; }
+  .punkte-tag { font-family: var(--mono); font-size:0.76rem; color: var(--akzent); font-weight:700; white-space:nowrap; }
+  .antwortlinie { border-bottom:1px solid var(--linie); height:26px; margin-bottom:4px; }
+  .mc-liste { list-style:none; margin:6px 0 0; padding:0; }
+  .mc-liste li { margin-bottom:5px; font-size:0.92rem; }
+  .mc-liste .box { display:inline-block; width:13px; height:13px; border:1.3px solid var(--ink); margin-right:8px; vertical-align:-2px; }
+  .zusatz { border-top:2px dashed var(--linie); padding-top:16px; margin-top:28px; }
+  .zusatz .punkte-tag { color:#a4472a; }
+  table.raster { width:100%; border-collapse:collapse; margin:4px 0 20px; font-size:0.86rem; }
+  table.raster th { text-align:left; font-family:var(--mono); font-size:0.64rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--muted); font-weight:700; padding:0 10px 8px 0; border-bottom:1px solid var(--ink); }
+  table.raster td { padding:9px 10px 9px 0; border-bottom:1px solid var(--linie); vertical-align:top; }
+  table.raster tr:last-child td { border-bottom:1px solid var(--ink); }
+  table.raster .punkte { font-family:var(--mono); color:var(--akzent); font-weight:700; white-space:nowrap; width:1%; text-align:right; }
+  .notenskala { margin-top:6px; }
+  .skala-balken { position:relative; height:2px; background:var(--linie); margin:30px 0 10px; }
+  .skala-balken::before { content:""; position:absolute; left:0; top:0; height:2px; width:100%; background:var(--akzent); opacity:0.4; }
+  .skala-marken { display:flex; justify-content:space-between; }
+  .skala-marke { flex:1; text-align:center; position:relative; font-family:var(--mono); }
+  .skala-marke::before { content:""; position:absolute; top:-38px; left:50%; width:1px; height:10px; background:var(--ink); transform:translateX(-0.5px); }
+  .skala-marke .note { font-size:1.2rem; font-weight:700; color:var(--ink); }
+  .skala-marke .spanne { font-size:0.72rem; color:var(--muted); }
 </style>
 <style>
   .pw-gate {
@@ -214,18 +250,19 @@
   </div>
 </div>
 
-
 <button class="download-btn no-print" onclick="window.print()">Drucken / als PDF speichern</button>
 
 <div class="blatt">
 
   <div class="kopf">
     <div>
-      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2</p>
-      <h1>Datenverarbeitung</h1>
+      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2 &middot; Termin 27</p>
+      <h1>Leistungsnachweis 2</h1>
     </div>
     <div class="kennzahlen">
-      Lernbereich 2<br><b>9</b> Termine
+      <b>21</b> Punkte<br>
+      <b>+2</b> Bonus<br>
+      ca. 25 Min.
     </div>
     <svg class="kopfgrafik" viewBox="0 0 140 70" width="110" height="55" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="14" cy="35" r="8"/>
@@ -242,43 +279,138 @@
   </div>
 
   <div class="inhalt">
-  <p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
-  <h2>Sequenzziel</h2>
-  <p class="ziel-box">Die Schüler:innen bedienen die Arbeitsoberfläche von Microsoft Excel und verknüpfen numerische Zellinhalte mithilfe von Formeln und relativen bzw. absoluten Zellbezügen.</p>
 
-  <h2>Kompetenzen</h2>
-  <ul class="material-liste">
-      <li>Arbeitsoberfläche von Excel bedienen</li>
-      <li>Numerische Zellinhalte mit Formeln verknüpfen</li>
-      <li>Relative und absolute Zellbezüge anwenden</li>
-      <li>Einfache Auswertungen durchführen: Summe, Mittelwert, Minimum/Maximum</li>
-      <li>Passende Diagramme zu eigenen Daten erstellen</li>
-  </ul>
+<p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
 
-  <h2>Methoden</h2>
-  <ul class="material-liste">
-      <li>Angeleitetes Arbeiten direkt am Rechner (Einzelarbeit)</li>
-      <li>Schrittweise Formel-Demonstrationen am Beamer</li>
-      <li>Partnerarbeit bei Übungsaufgaben</li>
-      <li>Eigenes kleines Tabellen-Projekt (z. B. Taschengeld, Notenschnitt)</li>
-  </ul>
+  <div class="lnw-kopfzeile">
+    <span>Name: &nbsp;</span>
+    <span>Klasse: &nbsp;</span>
+    <span>Datum: &nbsp;</span>
+    <span>Punkte: &nbsp;&nbsp;/&nbsp;21 (+2)</span>
+  </div>
 
-  <h2>Termine</h2>
-  <table class="plan">
-    <tr><th>Nr.</th><th>KW</th><th>Datum</th><th>Thema</th><th>Kompetenz / Inhalt</th><th>Status</th></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 6</td><td class='datum'>08.02.&ndash;12.02.2027</td><td colspan='2'>Faschingsferien</td><td></td></tr>
-    <tr><td class='nr'>19</td><td class='kw'>KW 7</td><td class='datum'>15.02.&ndash;19.02.2027</td><td class='thema'><a href="ablaufplan-stunde19-oberflaeche.html">Benutzeroberfläche &amp; Grundlagen</a></td><td>Arbeitsoberfläche kennenlernen: Zellen, Zeilen, Spalten.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>20</td><td class='kw'>KW 8</td><td class='datum'>22.02.&ndash;26.02.2027</td><td class='thema'><a href="ablaufplan-stunde20-formatieren.html">Eingabe, Auto-Vervollständigung &amp; Formatieren</a></td><td>Dateneingabe, Formatierung, <a href="materialien-stunde20-formatieren.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>21</td><td class='kw'>KW 9</td><td class='datum'>01.03.&ndash;05.03.2027</td><td class='thema'><a href="ablaufplan-stunde21-formeln.html">Einfache Formeln: Grundrechenarten</a></td><td>Formeln ohne Funktion, <a href="materialien-stunde21-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>22</td><td class='kw'>KW 10</td><td class='datum'>08.03.&ndash;12.03.2027</td><td class='thema'><a href="ablaufplan-stunde22-funktionen.html">Formeln mit Funktionen</a></td><td>Summe, Min, Max, Mittelwert, <a href="materialien-stunde22-funktionen.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>23</td><td class='kw'>KW 11</td><td class='datum'>15.03.&ndash;19.03.2027</td><td class='thema'><a href="ablaufplan-stunde23-relativ.html">Relativer Zellbezug</a></td><td>Formel kopieren, <a href="materialien-stunde23-relativ.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 12</td><td class='datum'>22.03.&ndash;26.03.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 13</td><td class='datum'>29.03.&ndash;02.04.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr><td class='nr'>24</td><td class='kw'>KW 14</td><td class='datum'>05.04.&ndash;09.04.2027</td><td class='thema'><a href="ablaufplan-stunde24-absolut.html">Absoluter Zellbezug</a></td><td>$-Zeichen/F4, <a href="materialien-stunde24-absolut.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>25</td><td class='kw'>KW 15</td><td class='datum'>12.04.&ndash;16.04.2027</td><td class='thema'><a href="ablaufplan-stunde25-weitere-formeln.html">Weitere Formeln: Potenz, Runden, Kreis</a></td><td>Potenz/Runden/PI(), <a href="materialien-stunde25-weitere-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>26</td><td class='kw'>KW 16</td><td class='datum'>19.04.&ndash;23.04.2027</td><td class='thema'><a href="ablaufplan-stunde26-diagramme.html">Diagramme &amp; Tabellen drucken</a></td><td>Diagrammtyp wählen, Druckbereich, <a href="materialien-stunde26-diagramme.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='leistungsnachweis'><td class='nr'>27</td><td class='kw'>KW 17</td><td class='datum'>26.04.&ndash;30.04.2027</td><td class='thema'><a href="ablaufplan-stunde27-wiederholung-lnw.html">Wiederholung &amp; Leistungsnachweis</a></td><td><a href="leistungsnachweis2-datenverarbeitung.html">Leistungsnachweis 2</a> (21 P + 2 Bonus).</td><td><span class='status leistungsnachweis'>LNW</span></td></tr>
+  <p class="einordnung">Dieser Leistungsnachweis deckt die Sequenz &bdquo;Datenverarbeitung&ldquo; ab (Termine 19&ndash;26): Benutzeroberfl&auml;che, Formeln, Funktionen, relativer und absoluter Zellbezug, weitere Formeln, Diagramme. Arbeite allein und in ganzen S&auml;tzen, wo danach gefragt ist.</p>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>1&nbsp;&middot;&nbsp;Fachbegriffe</b><span class="punkte-tag">2 P</span></div>
+    <p>Benenne die markierte Zelle <code>C4</code> und den Zellbereich von <code>B2</code> bis <code>D5</code> in der richtigen Schreibweise.</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>2&nbsp;&middot;&nbsp;Formel schreiben</b><span class="punkte-tag">2 P</span></div>
+    <p>Schreibe die Formel, die den Inhalt von Zelle B3 und Zelle B4 addiert.</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>3&nbsp;&middot;&nbsp;Funktion lesen</b><span class="punkte-tag">2 P</span></div>
+    <p>Was berechnet die Formel <code>=MITTELWERT(C2:C8)</code>? Erkl&auml;re in einem Satz.</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>4&nbsp;&middot;&nbsp;Relativer Bezug</b><span class="punkte-tag">3 P</span></div>
+    <p>In Zelle D3 steht die Formel <code>=B3*C3</code>. Du kopierst sie nach D4 und D5. a) Welche Formel steht danach in D4? b) Welche in D5? c) Wie nennt man dieses Verhalten?</p>
+    <div class="antwortlinie"></div>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>5&nbsp;&middot;&nbsp;Absoluter Bezug</b><span class="punkte-tag">3 P</span></div>
+    <p>a) Wof&uuml;r braucht man den absoluten Zellbezug? b) Wie schreibt man einen absoluten Bezug auf Zelle C3? c) Mit welcher Taste kann man ihn schnell setzen?</p>
+    <div class="antwortlinie"></div>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>6&nbsp;&middot;&nbsp;Fehler finden</b><span class="punkte-tag">2 P</span></div>
+    <p>Eine Mitschülerin tippt in Zelle C5 die Formel <code>=19,95+14,53</code> ein, statt die Zellen B3 und B4 zu benutzen. Was ist der Nachteil daran, verglichen mit <code>=B3+B4</code>?</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>7&nbsp;&middot;&nbsp;Diagrammtyp w&auml;hlen</b><span class="punkte-tag">2 P</span></div>
+    <p>Du m&ouml;chtest zeigen, wie sich die Lieblingsf&auml;cher der Klasse prozentual verteilen. Welchen Diagrammtyp w&auml;hlst du, und warum?</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>8&nbsp;&middot;&nbsp;Potenz &amp; Runden</b><span class="punkte-tag">3 P</span></div>
+    <p>a) Schreibe die Funktion, die 2 hoch 5 berechnet. b) Schreibe die Funktion, die die Zahl in Zelle A3 auf 2 Nachkommastellen rundet. c) Was ist das Ergebnis von 2 hoch 5?</p>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="aufgabe">
+    <div class="aufgabe-kopf"><b>9&nbsp;&middot;&nbsp;Kreisberechnung</b><span class="punkte-tag">3 P</span></div>
+    <p>Ein Kreis hat den Radius 4&nbsp;cm (in Zelle A2). Schreibe die Formel zur Berechnung der Fl&auml;che in der Tabellenkalkulation-Schreibweise.</p>
+    <div class="antwortlinie"></div>
+    <div class="antwortlinie"></div>
+  </div>
+
+  <div class="zusatz">
+    <div class="aufgabe-kopf"><b>&#9733;&nbsp;Zusatzaufgabe &ndash; Informatik-Profi</b><span class="punkte-tag">+2 P</span></div>
+    <p>Du m&ouml;chtest nur die Zellen B2, D2 und F2 addieren (nicht die Zellen dazwischen). Beschreibe, wie du dabei mit der Maus und einer Taste vorgehst, und schreibe die passende Formel.</p>
+    <div class="antwortlinie"></div>
+    <div class="antwortlinie"></div>
+  </div>
+
+  </div>
+</div>
+
+<div class="blatt">
+
+  <div class="kopf">
+    <div>
+      <p class="eyebrow">Nur f&uuml;r die Lehrkraft</p>
+      <h1>Erwartungshorizont</h1>
+    </div>
+    <div class="kennzahlen">
+      Leistungsnachweis 2<br>
+      <b>21</b> Punkte gesamt
+    </div>
+    <svg class="kopfgrafik" viewBox="0 0 140 70" width="110" height="55" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="14" cy="35" r="8"/>
+      <line x1="22" y1="35" x2="42" y2="35"/>
+      <polygon points="58,20 74,35 58,50 42,35"/>
+      <line x1="74" y1="35" x2="94" y2="18"/>
+      <line x1="74" y1="35" x2="94" y2="52"/>
+      <line x1="94" y1="18" x2="112" y2="18"/>
+      <line x1="94" y1="52" x2="112" y2="52"/>
+      <line x1="112" y1="18" x2="126" y2="35"/>
+      <line x1="112" y1="52" x2="126" y2="35"/>
+      <circle cx="126" cy="35" r="8"/>
+    </svg>
+  </div>
+
+  <div class="inhalt">
+
+  <table class="raster">
+    <tr><th>Aufgabe</th><th>Erwartete Antwort</th><th>Punkte</th></tr>
+    <tr><td>1 Fachbegriffe</td><td>Zelle: <b>C4</b>. Bereich: <b>B2:D5</b>.</td><td class="punkte">2</td></tr>
+    <tr><td>2 Formel schreiben</td><td><b>=B3+B4</b></td><td class="punkte">2</td></tr>
+    <tr><td>3 Funktion lesen</td><td>Berechnet den Mittelwert (Durchschnitt) der Zellen C2 bis C8.</td><td class="punkte">2</td></tr>
+    <tr><td>4 Relativer Bezug</td><td>a) =B4*C4  b) =B5*C5  c) Relativer Zellbezug (je 1 P).</td><td class="punkte">3</td></tr>
+    <tr><td>5 Absoluter Bezug</td><td>a) Wenn sich eine Zelle beim Kopieren NICHT mitverschieben soll, z.&nbsp;B. ein fester Wert. b) $C$3. c) Taste F4 (je 1 P).</td><td class="punkte">3</td></tr>
+    <tr><td>6 Fehler finden</td><td>Bei Änderung der Ausgangswerte muss die Formel händisch angepasst werden, bei Zellbezug passt sie sich automatisch an.</td><td class="punkte">2</td></tr>
+    <tr><td>7 Diagrammtyp</td><td>Kreisdiagramm, weil es Anteile am Ganzen (Prozentverteilung) zeigt.</td><td class="punkte">2</td></tr>
+    <tr><td>8 Potenz &amp; Runden</td><td>a) =POTENZ(2;5)  b) =RUNDEN(A3;2)  c) 32 (je 1 P).</td><td class="punkte">3</td></tr>
+    <tr><td>9 Kreisberechnung</td><td>=PI()*A2^2 (sinngem&auml;&szlig; gleichwertige Schreibweise akzeptieren).</td><td class="punkte">3</td></tr>
+    <tr><td>&#9733; Zusatzaufgabe</td><td>Strg-Taste gedrückt halten und B2, D2, F2 einzeln anklicken; Formel z.&nbsp;B. =SUMME(B2;D2;F2).</td><td class="punkte">+2</td></tr>
   </table>
+
+  <h2>Punkte-Noten-Umrechnung</h2>
+  <p class="einordnung" style="margin-bottom:6px;">Vorschlag, bei Bedarf an die eigene Notenskala anpassen. Bonuspunkte k&ouml;nnen bei Grenzf&auml;llen zum Aufrunden der Note verwendet werden.</p>
+  <div class="notenskala">
+    <div class="skala-balken"></div>
+    <div class="skala-marken">
+      <div class="skala-marke"><div class="note">1</div><div class="spanne">21&ndash;20</div></div>
+      <div class="skala-marke"><div class="note">2</div><div class="spanne">19&ndash;17</div></div>
+      <div class="skala-marke"><div class="note">3</div><div class="spanne">16&ndash;13</div></div>
+      <div class="skala-marke"><div class="note">4</div><div class="spanne">12&ndash;10</div></div>
+      <div class="skala-marke"><div class="note">5/6</div><div class="spanne">&le;9</div></div>
+    </div>
+  </div>
 
   </div>
 </div>

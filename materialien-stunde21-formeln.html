@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenverarbeitung &ndash; Informatik 8</title>
+<title>Arbeitsauftrag &ndash; Einfache Formeln &ndash; Grundrechenarten</title>
 <style>
   :root {
     --ink: #13171a;
@@ -74,7 +74,7 @@
 
   table.ablauf, table.plan { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 0.86rem; }
   table.ablauf th, table.plan th {
-    text-align: left; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
+    text-align: left; white-space: nowrap; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--muted); font-weight: 700; padding: 0 10px 8px 0;
     border-bottom: 1px solid var(--ink);
   }
@@ -163,7 +163,8 @@
   @media print {
     body { background: white; padding: 0; }
     .no-print { display: none !important; }
-    .blatt { max-width: 100%; }
+    .blatt { max-width: 100%; break-after: page; }
+    .blatt:last-child { break-after: auto; }
     .kopf { background: white !important; color: var(--ink) !important; border-bottom: 2px solid var(--ink); padding: 0 6px 16px; }
     .kopf h1 { color: var(--ink) !important; }
     .eyebrow { color: var(--akzent) !important; }
@@ -172,6 +173,28 @@
     .inhalt { padding: 16px 6px; }
     table.ablauf, table.plan { font-size: 0.78rem; }
   }
+</style>
+<style>
+  .tafelbild {
+    border: 1.5px solid var(--ink); border-radius: 4px; padding: 18px 22px; margin: 4px 0 6px;
+    background: #1c2024; color: #eef1ee; font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  .legende { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); margin-top: 8px; }
+</style>
+<style>
+  .schritt-liste { margin: 0 0 20px; padding: 0; list-style: none; }
+  .schritt { display: flex; gap: 14px; margin-bottom: 14px; }
+  .schritt-nr {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: white;
+    font-family: var(--mono); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .schritt-text { font-size: 0.94rem; line-height: 1.55; padding-top: 2px; }
+  .schritt-text code { font-family: var(--mono); background: var(--akzent-tint); padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
+  table.vorlage { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 0.86rem; }
+  table.vorlage th, table.vorlage td { border: 1px solid var(--linie); padding: 7px 10px; text-align: left; }
+  table.vorlage th { background: var(--akzent-tint); font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .hinweis-box { background: var(--akzent-tint); border-radius: 8px; padding: 14px 18px; font-size: 0.9rem; margin-top: 10px; }
 </style>
 <style>
   .pw-gate {
@@ -214,18 +237,17 @@
   </div>
 </div>
 
-
 <button class="download-btn no-print" onclick="window.print()">Drucken / als PDF speichern</button>
 
 <div class="blatt">
 
   <div class="kopf">
     <div>
-      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2</p>
-      <h1>Datenverarbeitung</h1>
+      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Termin 21 &middot; Arbeitsauftrag am PC</p>
+      <h1>Einfache Formeln &ndash; Grundrechenarten</h1>
     </div>
     <div class="kennzahlen">
-      Lernbereich 2<br><b>9</b> Termine
+      Name: __________<br>Einzelarbeit
     </div>
     <svg class="kopfgrafik" viewBox="0 0 140 70" width="110" height="55" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="14" cy="35" r="8"/>
@@ -240,45 +262,35 @@
       <circle cx="126" cy="35" r="8"/>
     </svg>
   </div>
-
   <div class="inhalt">
-  <p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
-  <h2>Sequenzziel</h2>
-  <p class="ziel-box">Die Schüler:innen bedienen die Arbeitsoberfläche von Microsoft Excel und verknüpfen numerische Zellinhalte mithilfe von Formeln und relativen bzw. absoluten Zellbezügen.</p>
 
-  <h2>Kompetenzen</h2>
-  <ul class="material-liste">
-      <li>Arbeitsoberfläche von Excel bedienen</li>
-      <li>Numerische Zellinhalte mit Formeln verknüpfen</li>
-      <li>Relative und absolute Zellbezüge anwenden</li>
-      <li>Einfache Auswertungen durchführen: Summe, Mittelwert, Minimum/Maximum</li>
-      <li>Passende Diagramme zu eigenen Daten erstellen</li>
+<p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
+
+  <p class="einordnung"><b>Arbeitsauftrag am PC.</b> Übertrage die vier Tabellen und berechne jedes Ergebnis mit einer Formel &ndash; nicht mit dem Taschenrechner-Ergebnis von Hand eintippen!</p>
+
+  <h2>Schritte</h2>
+  <ul class="schritt-liste">
+    <li class="schritt"><div class="schritt-nr">1</div><div class="schritt-text">Öffne deine <code>Datei_1</code> und füge ein neues Tabellenblatt ein.</div></li>
+    <li class="schritt"><div class="schritt-nr">2</div><div class="schritt-text">Übertrage die vier Tabellen unten mit den vorgegebenen Werten.</div></li>
+    <li class="schritt"><div class="schritt-nr">3</div><div class="schritt-text">Formatiere die vier Überschriften: Zellen verbinden &amp; zentrieren, Schriftgröße 12&nbsp;Punkt, Schattierung.</div></li>
+    <li class="schritt"><div class="schritt-nr">4</div><div class="schritt-text">Berechne für jede Rechenart das Ergebnis mit einer Formel (<code>=</code> + Zellbezug + Rechenzeichen + Zellbezug).</div></li>
+    <li class="schritt"><div class="schritt-nr">5</div><div class="schritt-text">Verändere danach den ersten Wert jeder Tabelle um 1 (bzw. 1&euro;) und bestätige mit Enter.</div></li>
+    <li class="schritt"><div class="schritt-nr">6</div><div class="schritt-text">Beschreibe am Ende des Blattes in einem Satz, was mit dem Ergebnis passiert ist und warum.</div></li>
   </ul>
-
-  <h2>Methoden</h2>
-  <ul class="material-liste">
-      <li>Angeleitetes Arbeiten direkt am Rechner (Einzelarbeit)</li>
-      <li>Schrittweise Formel-Demonstrationen am Beamer</li>
-      <li>Partnerarbeit bei Übungsaufgaben</li>
-      <li>Eigenes kleines Tabellen-Projekt (z. B. Taschengeld, Notenschnitt)</li>
-  </ul>
-
-  <h2>Termine</h2>
-  <table class="plan">
-    <tr><th>Nr.</th><th>KW</th><th>Datum</th><th>Thema</th><th>Kompetenz / Inhalt</th><th>Status</th></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 6</td><td class='datum'>08.02.&ndash;12.02.2027</td><td colspan='2'>Faschingsferien</td><td></td></tr>
-    <tr><td class='nr'>19</td><td class='kw'>KW 7</td><td class='datum'>15.02.&ndash;19.02.2027</td><td class='thema'><a href="ablaufplan-stunde19-oberflaeche.html">Benutzeroberfläche &amp; Grundlagen</a></td><td>Arbeitsoberfläche kennenlernen: Zellen, Zeilen, Spalten.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>20</td><td class='kw'>KW 8</td><td class='datum'>22.02.&ndash;26.02.2027</td><td class='thema'><a href="ablaufplan-stunde20-formatieren.html">Eingabe, Auto-Vervollständigung &amp; Formatieren</a></td><td>Dateneingabe, Formatierung, <a href="materialien-stunde20-formatieren.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>21</td><td class='kw'>KW 9</td><td class='datum'>01.03.&ndash;05.03.2027</td><td class='thema'><a href="ablaufplan-stunde21-formeln.html">Einfache Formeln: Grundrechenarten</a></td><td>Formeln ohne Funktion, <a href="materialien-stunde21-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>22</td><td class='kw'>KW 10</td><td class='datum'>08.03.&ndash;12.03.2027</td><td class='thema'><a href="ablaufplan-stunde22-funktionen.html">Formeln mit Funktionen</a></td><td>Summe, Min, Max, Mittelwert, <a href="materialien-stunde22-funktionen.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>23</td><td class='kw'>KW 11</td><td class='datum'>15.03.&ndash;19.03.2027</td><td class='thema'><a href="ablaufplan-stunde23-relativ.html">Relativer Zellbezug</a></td><td>Formel kopieren, <a href="materialien-stunde23-relativ.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 12</td><td class='datum'>22.03.&ndash;26.03.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 13</td><td class='datum'>29.03.&ndash;02.04.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr><td class='nr'>24</td><td class='kw'>KW 14</td><td class='datum'>05.04.&ndash;09.04.2027</td><td class='thema'><a href="ablaufplan-stunde24-absolut.html">Absoluter Zellbezug</a></td><td>$-Zeichen/F4, <a href="materialien-stunde24-absolut.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>25</td><td class='kw'>KW 15</td><td class='datum'>12.04.&ndash;16.04.2027</td><td class='thema'><a href="ablaufplan-stunde25-weitere-formeln.html">Weitere Formeln: Potenz, Runden, Kreis</a></td><td>Potenz/Runden/PI(), <a href="materialien-stunde25-weitere-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>26</td><td class='kw'>KW 16</td><td class='datum'>19.04.&ndash;23.04.2027</td><td class='thema'><a href="ablaufplan-stunde26-diagramme.html">Diagramme &amp; Tabellen drucken</a></td><td>Diagrammtyp wählen, Druckbereich, <a href="materialien-stunde26-diagramme.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='leistungsnachweis'><td class='nr'>27</td><td class='kw'>KW 17</td><td class='datum'>26.04.&ndash;30.04.2027</td><td class='thema'><a href="ablaufplan-stunde27-wiederholung-lnw.html">Wiederholung &amp; Leistungsnachweis</a></td><td><a href="leistungsnachweis2-datenverarbeitung.html">Leistungsnachweis 2</a> (21 P + 2 Bonus).</td><td><span class='status leistungsnachweis'>LNW</span></td></tr>
+  <h2>Vorlage: vier Rechenarten</h2>
+  <table class="vorlage">
+    <tr><th colspan="2">Addition (+)</th><th colspan="2">Subtraktion (&minus;)</th></tr>
+    <tr><td>Buch</td><td>19,95&nbsp;&euro;</td><td>Einnahmen</td><td>92,83&nbsp;&euro;</td></tr>
+    <tr><td>Zeitschriften</td><td>14,53&nbsp;&euro;</td><td>Ausgaben</td><td>52,67&nbsp;&euro;</td></tr>
+    <tr><td><b>Summe</b></td><td>?</td><td><b>Restbetrag</b></td><td>?</td></tr>
   </table>
+  <table class="vorlage">
+    <tr><th colspan="2">Multiplikation (*)</th><th colspan="2">Division (/)</th></tr>
+    <tr><td>Taschengeld</td><td>45,00&nbsp;&euro;</td><td>Gesamtkosten</td><td>840,00&nbsp;&euro;</td></tr>
+    <tr><td>Monat</td><td>12</td><td>Anzahl der Personen</td><td>8</td></tr>
+    <tr><td><b>Taschengeld im Jahr</b></td><td>?</td><td><b>Kosten pro Person</b></td><td>?</td></tr>
+  </table>
+  <div class="hinweis-box"><b>Satz zur Beobachtung:</b> ________________________________________________</div>
 
   </div>
 </div>

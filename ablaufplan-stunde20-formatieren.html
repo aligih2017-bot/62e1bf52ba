@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenverarbeitung &ndash; Informatik 8</title>
+<title>Ablaufplan &ndash; Dateneingabe, Auto-Vervollst&auml;ndigung &amp; Formatieren</title>
 <style>
   :root {
     --ink: #13171a;
@@ -74,7 +74,7 @@
 
   table.ablauf, table.plan { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 0.86rem; }
   table.ablauf th, table.plan th {
-    text-align: left; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
+    text-align: left; white-space: nowrap; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--muted); font-weight: 700; padding: 0 10px 8px 0;
     border-bottom: 1px solid var(--ink);
   }
@@ -163,7 +163,8 @@
   @media print {
     body { background: white; padding: 0; }
     .no-print { display: none !important; }
-    .blatt { max-width: 100%; }
+    .blatt { max-width: 100%; break-after: page; }
+    .blatt:last-child { break-after: auto; }
     .kopf { background: white !important; color: var(--ink) !important; border-bottom: 2px solid var(--ink); padding: 0 6px 16px; }
     .kopf h1 { color: var(--ink) !important; }
     .eyebrow { color: var(--akzent) !important; }
@@ -172,6 +173,14 @@
     .inhalt { padding: 16px 6px; }
     table.ablauf, table.plan { font-size: 0.78rem; }
   }
+</style>
+<style>
+  .tafelbild {
+    border: 1.5px solid var(--ink); border-radius: 4px; padding: 18px 22px; margin: 4px 0 6px;
+    background: #1c2024; color: #eef1ee; font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  .legende { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); margin-top: 8px; }
 </style>
 <style>
   .pw-gate {
@@ -214,18 +223,17 @@
   </div>
 </div>
 
-
 <button class="download-btn no-print" onclick="window.print()">Drucken / als PDF speichern</button>
 
 <div class="blatt">
 
   <div class="kopf">
     <div>
-      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2</p>
-      <h1>Datenverarbeitung</h1>
+      <p class="eyebrow">Informatik &middot; 8. Klasse Mittelschule &middot; Termin 20 von 27 &middot; Sequenz 2</p>
+      <h1>Dateneingabe, Auto-Vervollst&auml;ndigung &amp; Formatieren</h1>
     </div>
     <div class="kennzahlen">
-      Lernbereich 2<br><b>9</b> Termine
+      <b>45</b> Minuten<br>Einzelstunde<br>Lernbereich 2
     </div>
     <svg class="kopfgrafik" viewBox="0 0 140 70" width="110" height="55" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="14" cy="35" r="8"/>
@@ -240,45 +248,44 @@
       <circle cx="126" cy="35" r="8"/>
     </svg>
   </div>
-
   <div class="inhalt">
-  <p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
-  <h2>Sequenzziel</h2>
-  <p class="ziel-box">Die Schüler:innen bedienen die Arbeitsoberfläche von Microsoft Excel und verknüpfen numerische Zellinhalte mithilfe von Formeln und relativen bzw. absoluten Zellbezügen.</p>
 
-  <h2>Kompetenzen</h2>
-  <ul class="material-liste">
-      <li>Arbeitsoberfläche von Excel bedienen</li>
-      <li>Numerische Zellinhalte mit Formeln verknüpfen</li>
-      <li>Relative und absolute Zellbezüge anwenden</li>
-      <li>Einfache Auswertungen durchführen: Summe, Mittelwert, Minimum/Maximum</li>
-      <li>Passende Diagramme zu eigenen Daten erstellen</li>
-  </ul>
+<p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
 
-  <h2>Methoden</h2>
-  <ul class="material-liste">
-      <li>Angeleitetes Arbeiten direkt am Rechner (Einzelarbeit)</li>
-      <li>Schrittweise Formel-Demonstrationen am Beamer</li>
-      <li>Partnerarbeit bei Übungsaufgaben</li>
-      <li>Eigenes kleines Tabellen-Projekt (z. B. Taschengeld, Notenschnitt)</li>
-  </ul>
+  <p class="einordnung"><b>Einordnung.</b> Baut auf Termin 19 auf (Zellen/Zeilen/Spalten bekannt). Heute kommt die Formatierung und ein hilfreiches Feature dazu.</p>
 
-  <h2>Termine</h2>
-  <table class="plan">
-    <tr><th>Nr.</th><th>KW</th><th>Datum</th><th>Thema</th><th>Kompetenz / Inhalt</th><th>Status</th></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 6</td><td class='datum'>08.02.&ndash;12.02.2027</td><td colspan='2'>Faschingsferien</td><td></td></tr>
-    <tr><td class='nr'>19</td><td class='kw'>KW 7</td><td class='datum'>15.02.&ndash;19.02.2027</td><td class='thema'><a href="ablaufplan-stunde19-oberflaeche.html">Benutzeroberfläche &amp; Grundlagen</a></td><td>Arbeitsoberfläche kennenlernen: Zellen, Zeilen, Spalten.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>20</td><td class='kw'>KW 8</td><td class='datum'>22.02.&ndash;26.02.2027</td><td class='thema'><a href="ablaufplan-stunde20-formatieren.html">Eingabe, Auto-Vervollständigung &amp; Formatieren</a></td><td>Dateneingabe, Formatierung, <a href="materialien-stunde20-formatieren.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>21</td><td class='kw'>KW 9</td><td class='datum'>01.03.&ndash;05.03.2027</td><td class='thema'><a href="ablaufplan-stunde21-formeln.html">Einfache Formeln: Grundrechenarten</a></td><td>Formeln ohne Funktion, <a href="materialien-stunde21-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>22</td><td class='kw'>KW 10</td><td class='datum'>08.03.&ndash;12.03.2027</td><td class='thema'><a href="ablaufplan-stunde22-funktionen.html">Formeln mit Funktionen</a></td><td>Summe, Min, Max, Mittelwert, <a href="materialien-stunde22-funktionen.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>23</td><td class='kw'>KW 11</td><td class='datum'>15.03.&ndash;19.03.2027</td><td class='thema'><a href="ablaufplan-stunde23-relativ.html">Relativer Zellbezug</a></td><td>Formel kopieren, <a href="materialien-stunde23-relativ.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 12</td><td class='datum'>22.03.&ndash;26.03.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 13</td><td class='datum'>29.03.&ndash;02.04.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr><td class='nr'>24</td><td class='kw'>KW 14</td><td class='datum'>05.04.&ndash;09.04.2027</td><td class='thema'><a href="ablaufplan-stunde24-absolut.html">Absoluter Zellbezug</a></td><td>$-Zeichen/F4, <a href="materialien-stunde24-absolut.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>25</td><td class='kw'>KW 15</td><td class='datum'>12.04.&ndash;16.04.2027</td><td class='thema'><a href="ablaufplan-stunde25-weitere-formeln.html">Weitere Formeln: Potenz, Runden, Kreis</a></td><td>Potenz/Runden/PI(), <a href="materialien-stunde25-weitere-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>26</td><td class='kw'>KW 16</td><td class='datum'>19.04.&ndash;23.04.2027</td><td class='thema'><a href="ablaufplan-stunde26-diagramme.html">Diagramme &amp; Tabellen drucken</a></td><td>Diagrammtyp wählen, Druckbereich, <a href="materialien-stunde26-diagramme.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='leistungsnachweis'><td class='nr'>27</td><td class='kw'>KW 17</td><td class='datum'>26.04.&ndash;30.04.2027</td><td class='thema'><a href="ablaufplan-stunde27-wiederholung-lnw.html">Wiederholung &amp; Leistungsnachweis</a></td><td><a href="leistungsnachweis2-datenverarbeitung.html">Leistungsnachweis 2</a> (21 P + 2 Bonus).</td><td><span class='status leistungsnachweis'>LNW</span></td></tr>
+  <h2>Stundenziel</h2>
+  <p class="ziel-box">Die Sch&uuml;ler:innen geben Daten ein, nutzen die Auto-Vervollst&auml;ndigung sinnvoll und formatieren eine Tabelle (Zellen verbinden, Rahmen, Schattierung, Zahlenformat).</p>
+
+  <h2>Einstiegsimpuls</h2>
+  <p class="lehrersatz"><span class="label">Vorschlag für den Einstieg</span>LK tippt in einer Spalte &bdquo;Januar&ldquo;, dann in der n&auml;chsten Zeile den Buchstaben &bdquo;F&ldquo; und fragt: &bdquo;Was macht das Programm hier gerade?&ldquo;</p>
+
+  <h2>Ablauf</h2>
+  <table class="ablauf">
+    <tr><th>Zeit</th><th>Phase</th><th>Unterrichtsverlauf</th><th>Sozialform/Aktionsform</th><th>Methode/Medien</th></tr>
+    <tr><td class="zeit">0&ndash;5</td><td class="phase">Einstieg</td><td><b>LK:</b> zeigt live, wie das Programm bei einer zweiten, &auml;hnlich beginnenden Eingabe einen Vorschlag macht, und fragt, was das Programm da tut.<br><b>SuS:</b> beobachten und vermuten, dass das Programm bereits verwendete Eintr&auml;ge vorschl&auml;gt.</td><td class="sozialform">UG</td><td class="folie">TA</td></tr>
+    <tr><td class="zeit">5&ndash;12</td><td class="phase">Erarbeitung I</td><td><b>LK:</b> erkl&auml;rt die Auto-Vervollst&auml;ndigung f&uuml;r Text und f&uuml;r Zahlenfolgen (z.&nbsp;B. Monatsnamen, Zahlenreihen) anhand der Buch-Beispiele.<br><b>SuS:</b> nennen eigene Beispiele, wo eine solche Funktion n&uuml;tzlich sein k&ouml;nnte.</td><td class="sozialform">LV</td><td class="folie">PPT</td></tr>
+    <tr><td class="zeit">12&ndash;20</td><td class="phase">Erarbeitung II</td><td><b>LK:</b> zeigt die drei M&ouml;glichkeiten f&uuml;r zu langen Text (Zellen verbinden &amp; zentrieren, Spaltenbreite anpassen, Zeilenumbruch) sowie Rahmen und Schattierung.<br><b>SuS:</b> beobachten am Beamer und stellen Rückfragen zu den Formatierungsoptionen.</td><td class="sozialform">LV/UG</td><td class="folie">TA</td></tr>
+    <tr><td class="zeit">20&ndash;38</td><td class="phase">Vertiefung/&Uuml;bung</td><td><b>LK:</b> stellt den Arbeitsauftrag &bdquo;Sammelbestellung der 8.&nbsp;Klassen&ldquo; vor und geht herum, um bei Formatierungsproblemen zu helfen.<br><b>SuS:</b> &uuml;bertragen die vorgegebene Bestelltabelle in eine neue Datei, nutzen die Auto-Vervollst&auml;ndigung bei den Gr&ouml;&szlig;enbezeichnungen und formatieren nach Vorgabe (Zellen verbinden, Rahmen, Schattierung, Ausrichtung).</td><td class="sozialform">EA</td><td class="folie">PC/AB</td></tr>
+    <tr><td class="zeit">38&ndash;42</td><td class="phase">Sicherung</td><td><b>LK:</b> l&auml;sst die Paare ihre fertigen Tabellen vergleichen.<br><b>SuS:</b> vergleichen ihre Tabelle mit der Partnerin/dem Partner und geben sich R&uuml;ckmeldung zur Formatierung.</td><td class="sozialform">PA</td><td class="folie">PC</td></tr>
+    <tr><td class="zeit">42&ndash;45</td><td class="phase">Reflexion/Ausblick</td><td><b>LK:</b> fragt, welche Formatierung am meisten gebraucht wurde, und gibt einen Ausblick auf Formeln in der n&auml;chsten Stunde.<br><b>SuS:</b> nennen kurz ihre Erfahrung aus der &Uuml;bung.</td><td class="sozialform">UG</td><td class="folie">&ndash;</td></tr>
   </table>
+
+  <h2>Tafelbild</h2>
+  <div class="tafelbild">AUTO-VERVOLLSTAENDIGUNG: Programm schlaegt bekannte Eintraege vor
+  -> Enter/Pfeiltaste = uebernehmen,  weiterschreiben = ignorieren
+
+FORMATIEREN:
+  Zellen verbinden + zentrieren  |  Rahmen  |  Schattierung  |  Zahlenformat (Wahrung)</div>
+  <p class="legende">TA = Tafelbild/Tafelanschrieb &middot; AB = Arbeitsblatt &middot; HE = Hefteintrag &middot; PC = Arbeitsauftrag am Computer &middot; UG = Unterrichtsgespr&auml;ch &middot; LV = Lehrervortrag &middot; EA = Einzelarbeit &middot; PA = Partnerarbeit &middot; GA = Gruppenarbeit &middot; SA = Stillarbeit &middot; L-DEMO = Lehrkraft-Demonstration</p>
+
+  <h2>Benötigtes Material</h2>
+  <ul class="material-liste">
+    <li>Arbeitsauftrag &bdquo;Sammelbestellung der 8.&nbsp;Klassen&ldquo;: <a href="materialien-stunde20-formatieren.html">Arbeitsauftrag am PC</a></li>
+    <li>Eigener Rechner/Laptop pro Sch&uuml;ler:in</li>
+  </ul>
+
+  <p class="roter-faden"><b>Roter Faden:</b> Oberfl&auml;che &amp; Grundlagen &middot; <span class="aktuell">Eingabe &amp; Formatieren</span> &middot; einfache Formeln &middot; Funktionen &middot; relativer Bezug &middot; absoluter Bezug &middot; weitere Formeln &middot; Diagramme/Drucken &middot; Leistungsnachweis</p>
 
   </div>
 </div>
