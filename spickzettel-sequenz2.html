@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datenverarbeitung &ndash; Informatik 8</title>
+<title>Spickzettel &ndash; Sequenz 2 Datenverarbeitung</title>
 <style>
   :root {
     --ink: #13171a;
@@ -74,7 +74,7 @@
 
   table.ablauf, table.plan { width: 100%; border-collapse: collapse; margin: 4px 0 6px; font-size: 0.86rem; }
   table.ablauf th, table.plan th {
-    text-align: left; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
+    text-align: left; white-space: nowrap; font-family: var(--mono); font-size: 0.64rem; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--muted); font-weight: 700; padding: 0 10px 8px 0;
     border-bottom: 1px solid var(--ink);
   }
@@ -163,7 +163,8 @@
   @media print {
     body { background: white; padding: 0; }
     .no-print { display: none !important; }
-    .blatt { max-width: 100%; }
+    .blatt { max-width: 100%; break-after: page; }
+    .blatt:last-child { break-after: auto; }
     .kopf { background: white !important; color: var(--ink) !important; border-bottom: 2px solid var(--ink); padding: 0 6px 16px; }
     .kopf h1 { color: var(--ink) !important; }
     .eyebrow { color: var(--akzent) !important; }
@@ -172,6 +173,26 @@
     .inhalt { padding: 16px 6px; }
     table.ablauf, table.plan { font-size: 0.78rem; }
   }
+</style>
+<style>
+  .tafelbild {
+    border: 1.5px solid var(--ink); border-radius: 4px; padding: 18px 22px; margin: 4px 0 6px;
+    background: #1c2024; color: #eef1ee; font-family: var(--mono); font-size: 0.85rem; line-height: 1.7;
+    white-space: pre-wrap;
+  }
+  .legende { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); margin-top: 8px; }
+</style>
+<style>
+  .termin-karte { border: 1px solid var(--linie); border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+  .termin-kopf { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .termin-nr { font-family: var(--mono); font-size: 0.72rem; color: var(--akzent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .termin-titel { font-weight: 700; font-size: 1.02rem; flex: 1; }
+  .termin-links { font-family: var(--mono); font-size: 0.74rem; white-space: nowrap; }
+  .termin-links a { margin-left: 10px; }
+  .mini-schritte { margin: 0; padding-left: 20px; font-size: 0.88rem; line-height: 1.55; }
+  .mini-schritte li { margin-bottom: 3px; }
+  .inhaltsverzeichnis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 18px; font-size: 0.82rem; margin: 10px 0 30px; font-family: var(--mono); }
+  .inhaltsverzeichnis a { color: var(--akzent); text-decoration: none; border-bottom: 1px solid currentColor; }
 </style>
 <style>
   .pw-gate {
@@ -214,18 +235,18 @@
   </div>
 </div>
 
-
 <button class="download-btn no-print" onclick="window.print()">Drucken / als PDF speichern</button>
 
 <div class="blatt">
 
   <div class="kopf">
     <div>
-      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2</p>
-      <h1>Datenverarbeitung</h1>
+      <p class="eyebrow">Informatik &middot; 8. Klasse &middot; Sequenz 2 &middot; für die Lehrkraft</p>
+      <h1>Spickzettel: Datenverarbeitung</h1>
     </div>
     <div class="kennzahlen">
-      Lernbereich 2<br><b>9</b> Termine
+      <b>9</b> Termine<br>
+      Termin 19&ndash;27
     </div>
     <svg class="kopfgrafik" viewBox="0 0 140 70" width="110" height="55" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="14" cy="35" r="8"/>
@@ -240,47 +261,141 @@
       <circle cx="126" cy="35" r="8"/>
     </svg>
   </div>
-
   <div class="inhalt">
-  <p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
-  <h2>Sequenzziel</h2>
-  <p class="ziel-box">Die Schüler:innen bedienen die Arbeitsoberfläche von Microsoft Excel und verknüpfen numerische Zellinhalte mithilfe von Formeln und relativen bzw. absoluten Zellbezügen.</p>
 
-  <h2>Kompetenzen</h2>
-  <ul class="material-liste">
-      <li>Arbeitsoberfläche von Excel bedienen</li>
-      <li>Numerische Zellinhalte mit Formeln verknüpfen</li>
-      <li>Relative und absolute Zellbezüge anwenden</li>
-      <li>Einfache Auswertungen durchführen: Summe, Mittelwert, Minimum/Maximum</li>
-      <li>Passende Diagramme zu eigenen Daten erstellen</li>
-  </ul>
+<p class="no-print"><a href="jahresplanung.html" style="font-family:var(--mono);font-size:0.78rem;">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></p>
 
-  <h2>Methoden</h2>
-  <ul class="material-liste">
-      <li>Angeleitetes Arbeiten direkt am Rechner (Einzelarbeit)</li>
-      <li>Schrittweise Formel-Demonstrationen am Beamer</li>
-      <li>Partnerarbeit bei Übungsaufgaben</li>
-      <li>Eigenes kleines Tabellen-Projekt (z. B. Taschengeld, Notenschnitt)</li>
-  </ul>
+  <p class="einordnung"><b>Zweck dieser Seite.</b> Schnelle Übersicht für dich: was in welchem Termin live zu zeigen ist, plus direkte Links zu Ablaufplan und Arbeitsauftrag. Passwort für alle Seiten: <code>Informatik8b</code>.</p>
 
-  <p class="no-print"><a href="spickzettel-sequenz2.html" style="font-family:var(--mono);font-size:0.78rem;">&rarr; Spickzettel f&uuml;r die Lehrkraft (alle Termine auf einer Seite)</a></p>
+  <div class="inhaltsverzeichnis">
+    <a href="#t19">Termin 19 &middot; Was ist Excel? Oberfläche</a>
+    <a href="#t20">Termin 20 &middot; Eingabe, Auto-Vervollständigung</a>
+    <a href="#t21">Termin 21 &middot; Einfache Formeln</a>
+    <a href="#t22">Termin 22 &middot; Formeln mit Funktionen</a>
+    <a href="#t23">Termin 23 &middot; Relativer Zellbezug</a>
+    <a href="#t24">Termin 24 &middot; Absoluter Zellbezug</a>
+    <a href="#t25">Termin 25 &middot; Weitere Formeln</a>
+    <a href="#t26">Termin 26 &middot; Diagramme</a>
+    <a href="#t27">Termin 27 &middot; Wiederholung</a>
+  </div>
 
-  <h2>Termine</h2>
-  <table class="plan">
-    <tr><th>Nr.</th><th>KW</th><th>Datum</th><th>Thema</th><th>Kompetenz / Inhalt</th><th>Status</th></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 6</td><td class='datum'>08.02.&ndash;12.02.2027</td><td colspan='2'>Faschingsferien</td><td></td></tr>
-    <tr><td class='nr'>19</td><td class='kw'>KW 7</td><td class='datum'>15.02.&ndash;19.02.2027</td><td class='thema'><a href="ablaufplan-stunde19-oberflaeche.html">Benutzeroberfläche &amp; Grundlagen</a></td><td>Arbeitsoberfläche kennenlernen: Zellen, Zeilen, Spalten.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>20</td><td class='kw'>KW 8</td><td class='datum'>22.02.&ndash;26.02.2027</td><td class='thema'><a href="ablaufplan-stunde20-formatieren.html">Eingabe, Auto-Vervollständigung &amp; Formatieren</a></td><td>Dateneingabe, Formatierung, <a href="materialien-stunde20-formatieren.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>21</td><td class='kw'>KW 9</td><td class='datum'>01.03.&ndash;05.03.2027</td><td class='thema'><a href="ablaufplan-stunde21-formeln.html">Einfache Formeln: Grundrechenarten</a></td><td>Formeln ohne Funktion, <a href="materialien-stunde21-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>22</td><td class='kw'>KW 10</td><td class='datum'>08.03.&ndash;12.03.2027</td><td class='thema'><a href="ablaufplan-stunde22-funktionen.html">Formeln mit Funktionen</a></td><td>Summe, Min, Max, Mittelwert, <a href="materialien-stunde22-funktionen.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>23</td><td class='kw'>KW 11</td><td class='datum'>15.03.&ndash;19.03.2027</td><td class='thema'><a href="ablaufplan-stunde23-relativ.html">Relativer Zellbezug</a></td><td>Formel kopieren, <a href="materialien-stunde23-relativ.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 12</td><td class='datum'>22.03.&ndash;26.03.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr class='ferien'><td></td><td class='kw'>KW 13</td><td class='datum'>29.03.&ndash;02.04.2027</td><td colspan='2'>Osterferien</td><td></td></tr>
-    <tr><td class='nr'>24</td><td class='kw'>KW 14</td><td class='datum'>05.04.&ndash;09.04.2027</td><td class='thema'><a href="ablaufplan-stunde24-absolut.html">Absoluter Zellbezug</a></td><td>$-Zeichen/F4, <a href="materialien-stunde24-absolut.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>25</td><td class='kw'>KW 15</td><td class='datum'>12.04.&ndash;16.04.2027</td><td class='thema'><a href="ablaufplan-stunde25-weitere-formeln.html">Weitere Formeln: Potenz, Runden, Kreis</a></td><td>Potenz/Runden/PI(), <a href="materialien-stunde25-weitere-formeln.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr><td class='nr'>26</td><td class='kw'>KW 16</td><td class='datum'>19.04.&ndash;23.04.2027</td><td class='thema'><a href="ablaufplan-stunde26-diagramme.html">Diagramme &amp; Tabellen drucken</a></td><td>Diagrammtyp wählen, Druckbereich, <a href="materialien-stunde26-diagramme.html">Arbeitsauftrag am PC</a>.</td><td><span class='status fertig'>fertig</span></td></tr>
-    <tr class='leistungsnachweis'><td class='nr'>27</td><td class='kw'>KW 17</td><td class='datum'>26.04.&ndash;30.04.2027</td><td class='thema'><a href="ablaufplan-stunde27-wiederholung-lnw.html">Wiederholung &amp; Leistungsnachweis</a></td><td><a href="leistungsnachweis2-datenverarbeitung.html">Leistungsnachweis 2</a> (21 P + 2 Bonus).</td><td><span class='status leistungsnachweis'>LNW</span></td></tr>
-  </table>
+  <div class="termin-karte" id="t19">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 19</span>
+      <span class="termin-titel">Was ist Excel? Oberfläche &amp; Grundlagen</span>
+      <span class="termin-links"><a href="ablaufplan-stunde19-oberflaeche.html">Ablaufplan</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Frage: &bdquo;Wer kennt Excel schon?&ldquo; &ndash; kurz sammeln.</li>
+      <li>Alltagsbeispiele zeigen: Haushaltsbuch, Vereinskasse, Notenliste, Sammelbestellung.</li>
+      <li>Programm gemeinsam öffnen (Startmenü/Taskleiste), neue Datei anlegen.</li>
+      <li>Oberfläche zeigen: Titelleiste, Menüband, Zelle, Zeile, Spalte, Tabellenblätter.</li>
+      <li>Zellbenennung erklären: A1, Bereich B5:C7.</li>
+      <li>Arbeitsauftrag: Datei_1 anlegen, Seite einrichten, Zellen färben &amp; benennen.</li>
+      <li>Hefteintrag diktieren (im Ablaufplan unten).</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t20">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 20</span>
+      <span class="termin-titel">Eingabe, Auto-Vervollständigung &amp; Formatieren</span>
+      <span class="termin-links"><a href="ablaufplan-stunde20-formatieren.html">Ablaufplan</a><a href="materialien-stunde20-formatieren.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Auto-Vervollständigung live zeigen (zwei ähnliche Listen eintippen).</li>
+      <li>Formatier-Optionen zeigen: Zellen verbinden &amp; zentrieren, Rahmen, Schattierung.</li>
+      <li>Arbeitsauftrag öffnen &ndash; Sammelbestellung übertragen &amp; formatieren.</li>
+      <li>Hefteintrag im Arbeitsauftrag zeigen/vorlesen.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t21">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 21</span>
+      <span class="termin-titel">Einfache Formeln: Grundrechenarten</span>
+      <span class="termin-links"><a href="ablaufplan-stunde21-formeln.html">Ablaufplan</a><a href="materialien-stunde21-formeln.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Formel-Schema erklären: <code>=</code> Zelle Rechenzeichen Zelle.</li>
+      <li>Live demonstrieren: Addition mit Zellbezug statt Taschenrechner-Ergebnis.</li>
+      <li>Arbeitsauftrag öffnen &ndash; vier Tabellen (Addition/Subtraktion/Multiplikation/Division).</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t22">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 22</span>
+      <span class="termin-titel">Formeln mit Funktionen: Summe, Min, Max, Mittelwert</span>
+      <span class="termin-links"><a href="ablaufplan-stunde22-funktionen.html">Ablaufplan</a><a href="materialien-stunde22-funktionen.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Funktionsschema zeigen: <code>=NAME(Argument)</code>, AutoSumme-Symbol.</li>
+      <li>MIN/MAX/MITTELWERT live demonstrieren.</li>
+      <li>Strg-Trick für nicht benachbarte Zellen zeigen.</li>
+      <li>Arbeitsauftrag öffnen &ndash; Besucherzahlen-Tabelle.</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t23">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 23</span>
+      <span class="termin-titel">Relativer Zellbezug</span>
+      <span class="termin-links"><a href="ablaufplan-stunde23-relativ.html">Ablaufplan</a><a href="materialien-stunde23-relativ.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Ausfüllkästchen demonstrieren: Formel kopieren, Bezug passt sich an.</li>
+      <li>Arbeitsauftrag öffnen &ndash; Bestellliste.</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t24">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 24</span>
+      <span class="termin-titel">Absoluter Zellbezug</span>
+      <span class="termin-links"><a href="ablaufplan-stunde24-absolut.html">Ablaufplan</a><a href="materialien-stunde24-absolut.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>$-Zeichen bzw. Taste F4 demonstrieren.</li>
+      <li>Arbeitsauftrag öffnen &ndash; Nachbarschaftshilfe (fester Stundenlohn).</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t25">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 25</span>
+      <span class="termin-titel">Weitere Formeln: Potenz, Runden, Kreisberechnungen</span>
+      <span class="termin-links"><a href="ablaufplan-stunde25-weitere-formeln.html">Ablaufplan</a><a href="materialien-stunde25-weitere-formeln.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>=POTENZ(), =RUNDEN(), =PI() zeigen, Bezug zu Mathe (Kreisberechnung).</li>
+      <li>Arbeitsauftrag öffnen &ndash; drei Teilaufgaben.</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t26">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 26</span>
+      <span class="termin-titel">Diagramme &amp; Tabellen drucken</span>
+      <span class="termin-links"><a href="ablaufplan-stunde26-diagramme.html">Ablaufplan</a><a href="materialien-stunde26-diagramme.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Diagramm einfügen zeigen (Balken/Kreis/Linie), Typwahl begründen.</li>
+      <li>Druckbereich, Zentrierung, Kopf-/Fußzeile zeigen.</li>
+      <li>Arbeitsauftrag öffnen &ndash; eigene Tabelle aus Termin 20/22 verwenden.</li>
+      <li>Hefteintrag.</li>
+    </ul>
+  </div>
+  <div class="termin-karte" id="t27">
+    <div class="termin-kopf">
+      <span class="termin-nr">Termin 27</span>
+      <span class="termin-titel">Wiederholung &amp; Leistungsnachweis</span>
+      <span class="termin-links"><a href="ablaufplan-stunde27-wiederholung-lnw.html">Ablaufplan</a><a href="leistungsnachweis2-datenverarbeitung.html">Arbeitsauftrag</a></span>
+    </div>
+    <ul class="mini-schritte">
+      <li>Blitzlicht-Wiederholung der Begriffe (Tafel).</li>
+      <li>Leistungsnachweis 2 austeilen, Arbeitszeit ca. 25 Min.</li>
+      <li>Einsammeln, kurzes Feedback zur Sequenz einholen.</li>
+    </ul>
+  </div>
 
   </div>
 </div>
